@@ -1,0 +1,44 @@
+[
+  {
+    "quote": "Arcadia Prod transformed our brand vision into a stunning visual narrative. Their attention to detail is unmatched.",
+    "author": "Sarah Chen",
+    "role": "Marketing Director",
+    "company": "TechFlow",
+    "variant": "rounded"
+  },
+  {
+    "quote": "Working with Arcadia was seamless. They understood our needs and delivered beyond expectations.",
+    "author": "Michael Torres",
+    "role": "CEO",
+    "company": "Innovate Labs",
+    "variant": "sharp"
+  },
+  {
+    "quote": "The team's creativity and professionalism made our project a huge success. Highly recommend!",
+    "author": "Emma Williams",
+    "role": "Creative Lead",
+    "company": "Design Studio",
+    "variant": "mixed"
+  },
+  {
+    "quote": "Exceptional quality and service. Arcadia Prod brought our story to life in ways we never imagined.",
+    "author": "James Park",
+    "role": "Founder",
+    "company": "StartupX",
+    "variant": "mixed"
+  },
+  {
+    "quote": "From concept to final delivery, the process was smooth and the results were outstanding.",
+    "author": "Lisa Anderson",
+    "role": "Brand Manager",
+    "company": "Retail Co",
+    "variant": "rounded"
+  },
+  {
+    "quote": "Their artistic vision combined with technical expertise created something truly special for our campaign.",
+    "author": "David Kim",
+    "role": "VP Marketing",
+    "company": "Global Brands",
+    "variant": "sharp"
+  }
+]
