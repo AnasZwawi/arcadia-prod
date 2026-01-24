@@ -4,23 +4,53 @@ import { ArrowUpRight, Camera, MonitorDot } from "lucide-react";
 import Link from "next/link";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { ContactForm } from "@/components/ContactForm";
+import NextImage from "next/image";
 import { ProjectCard } from "@/components/ProjectCard";
-import testimonials from "@/data/testimonials.json";
+import testimonialsData from "@/data/testimonials.json";
 import projects from "@/data/projects.json";
 import brands from "@/data/brands.json";
+
+// Type the testimonials data
+interface MediaItem {
+  type: "image" | "video";
+  url: string;
+}
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  media: MediaItem[];
+}
+
+const testimonials = testimonialsData as Testimonial[];
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden pt-16">
+      <section className="relative flex min-h-[100vh] flex-col justify-center overflow-hidden bg-black pt-16">
+        {/* Background Image */}
+        <div className="absolute bottom-0 inset-0 z-0">
+          <NextImage
+            src="/images/hero-projector1.jpg"
+            alt="Vintage film projector"
+            fill
+            className="object-cover opacity-60"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
         <Container className="relative z-10">
           <div className="max-w-4xl space-y-8">
-            <h1 className="text-6xl font-semibold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards text-foreground">
+            <h1 className="text-6xl font-semibold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards text-white">
               Capturing <br className="hidden sm:block" />
-              <span className="text-muted-foreground">Life in Motion.</span>
+              <span className="text-white/60">Life in Motion.</span>
             </h1>
-            <p className="max-w-xl text-lg text-muted-foreground sm:text-xl md:text-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
+            <p className="max-w-xl text-lg text-white/70 sm:text-xl md:text-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
               Arcadia Prod is a premier video production and photography studio.
               We craft visual stories that resonate with clarity and elegance.
             </p>
@@ -33,16 +63,13 @@ export default function Home() {
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
               >
                 View Work
               </Link>
             </div>
           </div>
         </Container>
-
-        {/* Abstract Background Element */}
-        <div className="absolute top-1/2 right-0 -z-10 h-150 w-150 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl opacity-50" />
       </section>
 
       {/* Trusted By Section */}
@@ -107,7 +134,8 @@ export default function Home() {
             What Our Clients Say
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {/* Masonry-style 4 Column Layout */}
+          <div className="columns-1 md:columns-4 gap-6 max-w-7xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={index}
@@ -115,7 +143,7 @@ export default function Home() {
                 author={testimonial.author}
                 role={testimonial.role}
                 company={testimonial.company}
-                variant={testimonial.variant as "rounded" | "sharp" | "mixed"}
+                media={testimonial.media}
               />
             ))}
           </div>

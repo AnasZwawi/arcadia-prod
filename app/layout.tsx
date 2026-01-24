@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const clash = localFont({
   src: "./fonts/ClashGrotesk-Variable.woff2",
@@ -22,41 +23,9 @@ export default function RootLayout({
       <body
         className={`${clash.className} bg-background text-foreground antialiased scroll-smooth selection:bg-foreground selection:text-background`}
       >
-        <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <Link href="/" className="text-xl font-medium tracking-tight">
-              ARCADIA PROD
-            </Link>
-            <nav className="flex gap-8 text-sm font-medium text-muted-foreground">
-              <Link
-                href="/work"
-                className="hover:text-foreground transition-colors"
-              >
-                Work
-              </Link>
-              <Link
-                href="/services"
-                className="hover:text-foreground transition-colors"
-              >
-                Services
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-foreground transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="hover:text-foreground transition-colors"
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </header>
+        <Navbar />
 
-        <main className="pt-16">{children}</main>
+        <main>{children}</main>
 
         <footer className="border-t border-border bg-muted/30 py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">

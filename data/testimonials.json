@@ -4,41 +4,335 @@
     "author": "Sarah Chen",
     "role": "Marketing Director",
     "company": "TechFlow",
-    "variant": "rounded"
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/3JZ_D3Vi9es"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+      }
+    ]
   },
   {
     "quote": "Working with Arcadia was seamless. They understood our needs and delivered beyond expectations.",
     "author": "Michael Torres",
     "role": "CEO",
     "company": "Innovate Labs",
-    "variant": "sharp"
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/EngW7tLk6R8"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&q=80"
+      }
+    ]
   },
   {
     "quote": "The team's creativity and professionalism made our project a huge success. Highly recommend!",
     "author": "Emma Williams",
     "role": "Creative Lead",
     "company": "Design Studio",
-    "variant": "mixed"
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/W9nZ6u156is"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/zpOULjyy-n8"
+      }
+    ]
   },
   {
-    "quote": "Exceptional quality and service. Arcadia Prod brought our story to life in ways we never imagined.",
-    "author": "James Park",
+    "quote": "The cinematic quality Arcadia brings to corporate content is industry-leading. They made us look like a Fortune 500 company.",
+    "author": "Marcus Thorne",
+    "role": "Operations Head",
+    "company": "Apex Logistics",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/hVvEISFw9w0"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1512413316925-fd47914c9c22?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/7X8m3Y-A_yA"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "Arcadia doesn't just film; they capture the soul of a brand. Our nonprofit's gala video moved our donors to tears.",
+    "author": "Dr. Elena Moss",
+    "role": "Executive Director",
+    "company": "GreenFuture Foundation",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/2M70G_B6h68"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/9No-FiEInLA"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "The turnaround time was incredible without sacrificing a single ounce of quality. Truly impressed.",
+    "author": "Kevin Liang",
+    "role": "Product Lead",
+    "company": "NexGen App",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1551288049-bbbda5366392?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/9bZkp7q19f0"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/W9nZ6u156is"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "The recruitment video series Arcadia produced has completely revitalized our admissions process. We've seen a 40% increase in applications.",
+    "author": "Elena Rodriguez",
+    "role": "Director of Admissions",
+    "company": "Summit Academy",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1544928147-79a2af1f98d9?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "Capturing the essence of architectural design is difficult, but they understood the interplay of light and space perfectly. The final portfolio is a masterpiece.",
+    "author": "Thomas Wright",
+    "role": "Lead Architect",
+    "company": "Urban Spaces",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/hVvEISFw9w0"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1486325212027-80816480f30c?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "We needed a campaign that felt organic and authentic for our skincare line. The team delivered visuals that feel tangible and incredibly premium.",
+    "author": "Sofia Costa",
     "role": "Founder",
-    "company": "StartupX",
-    "variant": "mixed"
+    "company": "Pure & Co.",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1571781926291-28b46c54908d?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/9No-FiEInLA"
+      }
+    ]
   },
   {
-    "quote": "From concept to final delivery, the process was smooth and the results were outstanding.",
-    "author": "Lisa Anderson",
-    "role": "Brand Manager",
-    "company": "Retail Co",
-    "variant": "rounded"
+    "quote": "High energy, dynamic, and powerful. The promo reel they cut matches the intensity of our brand exactly. It's playing in all our gyms worldwide.",
+    "author": "Ryan O'Malley",
+    "role": "CEO",
+    "company": "Pulse Fitness",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/7X8m3Y-A_yA"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+      }
+    ]
   },
   {
-    "quote": "Their artistic vision combined with technical expertise created something truly special for our campaign.",
-    "author": "David Kim",
-    "role": "VP Marketing",
-    "company": "Global Brands",
-    "variant": "sharp"
+    "quote": "Food videography is an art, and Arcadia are the masters. They made our menu look absolutely irresistible. Reservations are up across the board.",
+    "author": "Amara Patel",
+    "role": "Owner",
+    "company": "The Gilded Spoon",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/2M70G_B6h68"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
+      }
+    ]
+  },
+  {
+    "quote": "We tasked them with capturing the spirit of our new resort destinations. The drone footage and lifestyle shots are simply breathtaking.",
+    "author": "Julian Banks",
+    "role": "Creative Director",
+    "company": "Horizon Travel",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1571896349842-6e53ce41e887?w=800&q=80"
+      },
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/zpOULjyy-n8"
+      }
+    ]
   }
 ]
