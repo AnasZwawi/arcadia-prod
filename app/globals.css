@@ -144,9 +144,11 @@
     @apply bg-background text-foreground;
   }
 
-  /* Hide default cursor */
-  * {
-    cursor: none !important;
+  /* Hide default cursor only on non-touch devices */
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
   }
 
   /* Smooth scrolling behavior */

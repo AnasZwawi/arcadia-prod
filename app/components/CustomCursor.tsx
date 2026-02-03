@@ -6,8 +6,20 @@ import { motion } from "framer-motion";
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile/touch device
+    const checkMobile = () => {
+      const mobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        ) || window.matchMedia("(pointer: coarse)").matches;
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -35,11 +47,17 @@ export function CustomCursor() {
     };
   }, []);
 
+  // Don't render cursor on mobile devices
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <>
       {/* Outer cursor ring */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-2 border-lime rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-10 h-10 border-2 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        style={{ borderColor: "#CCFF00" }}
         animate={{
           x: mousePosition.x - 20,
           y: mousePosition.y - 20,
@@ -55,7 +73,8 @@ export function CustomCursor() {
 
       {/* Inner cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-lime rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        style={{ backgroundColor: "#CCFF00" }}
         animate={{
           x: mousePosition.x - 4,
           y: mousePosition.y - 4,
