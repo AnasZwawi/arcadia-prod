@@ -75,9 +75,9 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-foreground">Location</p>
                       <p className="text-muted-foreground">
-                        Los Angeles, CA
+                        Tunis
                         <br />
-                        United States
+                        Tunisia
                       </p>
                     </div>
                   </div>

@@ -39,7 +39,10 @@ export function Navbar() {
         <Link
           href="/"
           className={cn(
-            "text-xl font-medium tracking-tight transition-colors duration-300",
+            "text-xl font-bold tracking-tight transition-colors duration-300",
+            // Assuming the hero is somewhat dark (video/image), keep white text initially.
+            // But if the hero is light, we might need to change this logic.
+            // Given the design plan had a "Neutral 900" placeholder which is dark, white text is fine initially.
             isScrolled ? "text-foreground" : "text-white",
           )}
         >

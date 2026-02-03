@@ -202,7 +202,7 @@ export function TestimonialCard({
         </p>
 
         <div className="flex items-center gap-3 mt-auto">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-yellow-600 flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0">
             {author.charAt(0)}
           </div>
           <div className="space-y-0.5">
