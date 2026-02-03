@@ -31,7 +31,7 @@ export function Process() {
   return (
     <section className="py-32 bg-dark-bg text-white">
       <div className="max-w-[1920px] mx-auto px-6 sm:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 border-b border-white/20 pb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12 border-b border-white/20 pb-12">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -44,7 +44,7 @@ export function Process() {
               The Arcadia <br /> Process
             </h2>
           </motion.div>
-          <p className="text-gray-400 max-w-sm text-sm font-mono uppercase tracking-wide text-right hidden md:block">
+          <p className="text-gray-400 max-w-sm text-sm font-mono uppercase tracking-wide md:text-right hidden md:block">
             We don&apos;t just shoot. <br />
             We engineer visual experiences.
           </p>
