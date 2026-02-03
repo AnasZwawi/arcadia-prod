@@ -19,10 +19,10 @@ export function Footer() {
 
           <div className="flex flex-col gap-8 text-right">
             <a
-              href="mailto:hello@arcadia.inc"
+              href="mailto:contact@arcadiaprod.com"
               className="text-2xl font-bold hover:text-lime underline decoration-lime underline-offset-8 transition-colors"
             >
-              hello@arcadia.inc
+              contact@arcadiaprod.com
             </a>
             <div className="flex gap-4 justify-end font-mono text-xs uppercase tracking-widest text-gray-500">
               <Link href="#" className="hover:text-white">

@@ -45,10 +45,10 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-foreground">Email</p>
                       <a
-                        href="mailto:hello@arcadiaprod.com"
+                        href="mailto:contact@arcadiaprod.com"
                         className="text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        hello@arcadiaprod.com
+                        contact@arcadiaprod.com
                       </a>
                     </div>
                   </div>
