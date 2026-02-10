@@ -26,16 +26,16 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-12 text-[10px] font-bold tracking-[0.2em] uppercase text-white/90">
-          <Link href="#" className="hover:text-lime transition-colors">
+          <Link href="/portfolio" className="hover:text-lime transition-colors">
             Work
           </Link>
           <Link href="#" className="hover:text-lime transition-colors">
             Process
           </Link>
-          <Link href="#" className="hover:text-lime transition-colors">
+          <Link href="/services" className="hover:text-lime transition-colors">
             Services
           </Link>
-          <Link href="#" className="hover:text-lime transition-colors">
+          <Link href="/contact" className="hover:text-lime transition-colors">
             Contact
           </Link>
         </div>
@@ -43,7 +43,7 @@ export function Navbar() {
         {/* CTA Button */}
         <div className="hidden md:block">
           <Link
-            href="#"
+            href="/contact"
             className="border border-white/20 text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-lime hover:text-black hover:border-lime transition-all"
           >
             Lets Talk
@@ -76,7 +76,7 @@ export function Navbar() {
             </button>
             <div className="flex flex-col gap-8 text-white text-center">
               <Link
-                href="#"
+                href="/portfolio"
                 className="hover:text-lime text-3xl font-bold tracking-tighter uppercase"
                 onClick={() => setIsOpen(false)}
               >
@@ -90,14 +90,14 @@ export function Navbar() {
                 PROCESS
               </Link>
               <Link
-                href="#"
+                href="/services"
                 className="hover:text-lime text-3xl font-bold tracking-tighter uppercase"
                 onClick={() => setIsOpen(false)}
               >
                 SERVICES
               </Link>
               <Link
-                href="#"
+                href="/contact"
                 className="hover:text-lime text-3xl font-bold tracking-tighter uppercase"
                 onClick={() => setIsOpen(false)}
               >

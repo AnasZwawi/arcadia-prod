@@ -5,7 +5,14 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const items = [
+type PortfolioItem = {
+  title: string;
+  category: string;
+  year: string;
+  image: string;
+};
+
+const items: PortfolioItem[] = [
   {
     title: "Urban Rhythms",
     category: "Commercial",
@@ -22,10 +29,11 @@ const items = [
   },
 ];
 
-export function Portfolio() {
+export default function Portfolio() {
   return (
     <section className="py-32 bg-black text-white">
       <div className="max-w-[1920px] mx-auto px-6 sm:px-12">
+        {/* Header */}
         <div className="flex justify-between items-end mb-24 border-b border-white/20 pb-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -35,7 +43,7 @@ export function Portfolio() {
             <span className="text-lime font-mono text-[10px] uppercase tracking-widest">
               Featured Projects
             </span>
-            <h2 className="text-6xl md:text-9xl font-bold tracking-tighter uppercase mt-4 leading-[0.9]">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-4 leading-[0.9]">
               Selected <br /> Works
             </h2>
           </motion.div>
@@ -52,7 +60,8 @@ export function Portfolio() {
           </Link>
         </div>
 
-        <div className="space-y-32">
+        {/* Works */}
+        <div className="space-y-8">
           {items.map((item, idx) => (
             <motion.div
               key={idx}
@@ -60,40 +69,54 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="group relative"
             >
-              <div className="relative aspect-video w-full overflow-hidden mb-8">
+              <Link
+                href="/portfolio"
+                className="block group relative h-[250px] w-full overflow-hidden"
+              >
+                {/* Image */}
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-lime/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-multiply" />
-              </div>
 
-              <div className="flex justify-between items-start border-t border-white/20 pt-6">
-                <div>
-                  <h3 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-2">
-                    {item.title}
-                  </h3>
-                  <span className="text-lime font-mono uppercase tracking-widest text-sm">
+                {/* Persistent dark gradient for legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+
+                {/* Text overlay — bottom left */}
+                <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                  <span className="text-lime font-mono uppercase tracking-widest text-xs md:text-sm block mb-2">
                     {item.category}
                   </span>
+                  <h3 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9]">
+                    {item.title}
+                  </h3>
                 </div>
-                <div className="flex items-center gap-12">
-                  <span className="text-gray-500 font-mono text-sm hidden md:block">
+
+                {/* Year — bottom right */}
+                <div className="absolute bottom-0 right-0 p-8 md:p-12">
+                  <span className="text-gray-400 font-mono text-sm hidden md:block">
                     {item.year}
                   </span>
-                  <button className="bg-lime text-black p-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowUpRight size={24} />
-                  </button>
                 </div>
-              </div>
+
+                {/* Arrow — top right, appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                  <div className="bg-lime text-black p-3 rounded-full">
+                    <ArrowUpRight size={24} />
+                  </div>
+                </div>
+
+                {/* Top border lime reveal on hover */}
+                <div className="absolute top-0 left-0 h-[2px] w-0 bg-lime group-hover:w-full transition-all duration-700" />
+              </Link>
             </motion.div>
           ))}
         </div>
 
+        {/* Mobile "View All" link */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

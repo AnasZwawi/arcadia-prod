@@ -5,6 +5,7 @@
 
 @theme inline {
   --color-lime: var(--lime);
+  --color-gold: var(--gold);
   --color-lime-foreground: var(--lime-foreground);
   --color-dark-bg: var(--dark-bg);
   --color-background: var(--background);
@@ -53,6 +54,7 @@
   --radius: 0.625rem;
   
   --lime: #CCFF00;
+  --gold: #D4AF37;
   --lime-foreground: #000000;
   --dark-bg: #050505;
 
@@ -183,5 +185,9 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  .text-gold {
+    color: var(--gold);
   }
 }
