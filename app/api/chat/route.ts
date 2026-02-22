@@ -1,26 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Resend } from "resend";
+import OpenAI from "openai";
 
-const API_KEY = process.env.GEMINI_API_KEY;
 const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TEAM_EMAIL = process.env.ARCADIA_TEAM_EMAIL || "contact@arcadiaprod.com";
 
-export async function POST(req: NextRequest) {
-  const { message, history } = await req.json();
+const groq = new OpenAI({
+  baseURL: "https://api.groq.com/openai/v1",
+  apiKey: process.env.GROQ_API_KEY,
+});
 
-  if (!message) {
-    return NextResponse.json({ reply: "Message is required" }, { status: 400 });
-  }
-
-  try {
-    if (!API_KEY) throw new Error("GEMINI_API_KEY is not configured");
-
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
-      systemInstruction: `You are the Arcadia AI Advisor — a sharp, knowledgeable assistant for Arcadia Production, a premium video and photo production company.
+const SYSTEM_PROMPT = `You are the Arcadia AI Advisor — an assistant for Arcadia Production, a premium video and photo production company.
 
 About Arcadia Production:
 - We specialize in high-end video production, photography, brand films, wedding films, commercials, music videos, and creative content.
@@ -30,11 +20,9 @@ About Arcadia Production:
 
 Your role:
 - Help potential clients understand our services and how we can help their project.
-- Gather key details about their project naturally across the conversation — remember everything they've told you.
-- Answer questions about pricing, timelines, process, packages, and availability.
-- Be concise, professional, and warm — like a creative director having a real conversation.
+- Gather key details about their project naturally — remember everything they've told you.
 - NEVER ask the same question twice. Always build on what the client has already told you.
-- When you have enough info about a project, summarize it and suggest next steps (e.g., booking a call, sending a brief).
+- When you have enough info, suggest next steps (booking a call, sending a brief).
 - If you don't know specific pricing, say our team will follow up with a tailored quote.
 
 IMPORTANT — Lead capture:
@@ -43,27 +31,53 @@ IMPORTANT — Lead capture:
 - Only include fields you actually have. Use empty string "" for unknown fields.
 - This line will be stripped before showing the message to the user — it's for internal use only.
 
-Tone: Confident, creative, minimal. No fluff. No corporate speak.`,
+Tone: Short and human. Max 2 sentences per reply. One question at a time. No bullet points. No filler like "That's great!" or "Absolutely!". Talk like a real person, not a chatbot.`;
+
+export async function POST(req: NextRequest) {
+  const { message, history } = await req.json();
+
+  if (!message) {
+    return NextResponse.json({ reply: "Message is required" }, { status: 400 });
+  }
+
+  try {
+    // Build messages array for Groq (OpenAI-compatible format)
+    const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+      { role: "system", content: SYSTEM_PROMPT },
+      // Include conversation history (skip the initial AI greeting to avoid issues)
+      ...(history || [])
+        .slice(0, -1) // exclude the last user message, sent separately below
+        .filter(
+          (
+            _: { sender: string; text: string },
+            i: number,
+            arr: { sender: string; text: string }[],
+          ) => {
+            // skip leading AI messages
+            const firstUserIdx = arr.findIndex((m) => m.sender === "user");
+            return i >= firstUserIdx;
+          },
+        )
+        .map((msg: { sender: string; text: string }) => ({
+          role:
+            msg.sender === "user" ? ("user" as const) : ("assistant" as const),
+          content: msg.text,
+        })),
+      { role: "user", content: message },
+    ];
+
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      messages,
+      temperature: 0.7,
+      max_tokens: 300,
     });
 
-    const rawHistory = (history || []).slice(0, -1);
-    const firstUserIdx = rawHistory.findIndex(
-      (msg: { sender: string; text: string }) => msg.sender === "user",
-    );
-    const chatHistory = (
-      firstUserIdx === -1 ? [] : rawHistory.slice(firstUserIdx)
-    ).map((msg: { sender: string; text: string }) => ({
-      role: msg.sender === "user" ? "user" : "model",
-      parts: [{ text: msg.text }],
-    }));
-
-    const chat = model.startChat({ history: chatHistory });
-    const result = await chat.sendMessage(message);
     let aiResponse =
-      result?.response?.text() ||
+      completion.choices[0]?.message?.content ||
       "Sorry, I couldn't process that. Could you rephrase?";
 
-    // Extract LEAD_DATA if present and send email to the team
+    // Extract LEAD_DATA if present and email the team
     const leadMatch = aiResponse.match(/LEAD_DATA:(\{.*?\})/);
     if (leadMatch) {
       try {
@@ -101,13 +115,12 @@ Tone: Confident, creative, minimal. No fluff. No corporate speak.`,
         console.error("Failed to send lead email:", emailErr);
       }
 
-      // Strip the LEAD_DATA line before sending response to user
       aiResponse = aiResponse.replace(/\nLEAD_DATA:\{.*?\}/g, "").trim();
     }
 
     return NextResponse.json({ reply: aiResponse });
   } catch (error) {
-    console.error("Error communicating with Gemini API:", error);
+    console.error("Error communicating with Groq API:", error);
     return NextResponse.json(
       { reply: "There was an issue with the AI. Please try again later." },
       { status: 500 },
