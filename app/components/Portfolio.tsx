@@ -5,31 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-type PortfolioItem = {
-  title: string;
-  category: string;
-  year: string;
-  image: string;
-};
+import { PortfolioProject } from "@/lib/portfolio";
 
-const items: PortfolioItem[] = [
-  {
-    title: "Urban Rhythms",
-    category: "Commercial",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Velocity",
-    category: "Automotive",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
-  },
-];
-
-export default function Portfolio() {
+export default function Portfolio({ items }: { items: PortfolioProject[] }) {
+  // If no items, show nothing or placeholder
+  if (!items || items.length === 0) return null;
   return (
     <section className="py-32 bg-black text-white">
       <div className="max-w-[1920px] mx-auto px-6 sm:px-12">
@@ -76,7 +56,7 @@ export default function Portfolio() {
               >
                 {/* Image */}
                 <Image
-                  src={item.image}
+                  src={item.images[0]}
                   alt={item.title}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
