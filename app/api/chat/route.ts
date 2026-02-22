@@ -31,7 +31,7 @@ IMPORTANT — Lead capture:
 - Only include fields you actually have. Use empty string "" for unknown fields.
 - This line will be stripped before showing the message to the user — it's for internal use only.
 
-Tone: Short and human. Max 2 sentences per reply. One question at a time. No bullet points. No filler like "That's great!" or "Absolutely!". Talk like a real person, not a chatbot.`;
+Tone: Short and human. Max 2 sentences per reply. One question at a time. No bullet points. No filler like "That's great!" or "Absolutely!". Talk like a real person, not a chatbot, If someone is just curious about Arcadia, answer naturally — don't push them toward a project unless they bring it up first.`;
 
 export async function POST(req: NextRequest) {
   const { message, history } = await req.json();
