@@ -110,7 +110,7 @@ export function AboutUs() {
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2 relative aspect-[9/9] bg-gray-900 overflow-hidden group">
                 <Image
-                  src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1612544409025-e1f6a56c1152?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Production Studio"
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"

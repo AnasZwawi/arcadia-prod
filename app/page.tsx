@@ -6,6 +6,11 @@ import { Services } from "./components/Services";
 import { Clients } from "./components/Clients";
 import { AboutUs } from "./components/About";
 import { Chat } from "./components/Chat";
+import fs from "fs";
+import path from "path";
+
+const logosDir = path.join(process.cwd(), "public/logos");
+const logos = fs.readdirSync(logosDir).map((file) => `/logos/${file}`);
 
 import { getPortfolioData } from "@/lib/portfolio";
 
@@ -22,7 +27,7 @@ export default function Home() {
       <Process />
       <FeaturedProject />
       <Services />
-      <Clients />
+      <Clients logos={logos} />
       <Portfolio items={featuredProjects} />
     </main>
   );

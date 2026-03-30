@@ -25,13 +25,18 @@ export function Footer() {
               contact@arcadiaprod.com
             </a>
             <div className="flex gap-4 justify-end font-mono text-xs uppercase tracking-widest text-gray-500">
-              <Link href="#" className="hover:text-white">
+              <Link
+                href="https://www.instagram.com/arcadia___prod/"
+                className="hover:text-white"
+                target="_"
+              >
                 Instagram
               </Link>
-              <Link href="#" className="hover:text-white">
-                Facebook
-              </Link>
-              <Link href="#" className="hover:text-white">
+              <Link
+                href="https://www.linkedin.com/in/arcadia-prod-9b62163ba/"
+                className="hover:text-white"
+                target="_"
+              >
                 LinkedIn
               </Link>
             </div>

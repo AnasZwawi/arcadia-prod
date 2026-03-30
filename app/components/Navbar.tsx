@@ -13,23 +13,23 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="absolute top-0 left-0 w-full z-50 py-8 px-6 sm:px-12 mix-blend-difference"
+      className="absolute top-0 left-0 w-full z-50 py-8 px-6 sm:px-12"
     >
       <div className="max-w-[1920px] mx-auto flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo — no blend mode, fully opaque */}
         <Link
           href="/"
-          className="text-xl font-bold tracking-tighter text-white uppercase group"
+          className="text-xl font-bold tracking-tighter text-white uppercase group mix-blend-normal"
         >
-          ARCADIA{" "}
+          <img src={"/images/Arcadia-logo.png"} alt="logo" className="w-24" />
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-12 text-[10px] font-bold tracking-[0.2em] uppercase text-white/90">
+        {/* Desktop Menu — blend mode applied here only */}
+        <div className="hidden md:flex items-center gap-12 text-[10px] font-bold tracking-[0.2em] uppercase text-white/90 mix-blend-difference">
           <Link href="/portfolio" className="hover:text-lime transition-colors">
             Work
           </Link>
-          <Link href="#" className="hover:text-lime transition-colors">
+          <Link href="/#process" className="hover:text-lime transition-colors">
             Process
           </Link>
           <Link href="/services" className="hover:text-lime transition-colors">
@@ -41,7 +41,7 @@ export function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden md:block">
+        <div className="hidden md:block mix-blend-difference">
           <Link
             href="/contact"
             className="border border-white/20 text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-lime hover:text-black hover:border-lime transition-all"
@@ -52,7 +52,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white mix-blend-difference"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}

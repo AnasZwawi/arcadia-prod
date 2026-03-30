@@ -47,7 +47,6 @@ export default function PortfolioClient({
     });
   }, [lightbox]);
 
-  // Keyboard navigation
   useEffect(() => {
     if (!lightbox) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -59,7 +58,6 @@ export default function PortfolioClient({
     return () => window.removeEventListener("keydown", handleKey);
   }, [lightbox, closeLightbox, goNext, goPrev]);
 
-  // Prevent body scroll when lightbox open
   useEffect(() => {
     document.body.style.overflow = lightbox ? "hidden" : "";
     return () => {
@@ -147,7 +145,7 @@ export default function PortfolioClient({
                         src={project.images[0]}
                         alt={`${project.title} - Main`}
                         fill
-                        className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out group-hover:scale-105"
+                        className="object-cover transition-all duration-1000 ease-in-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700" />
                       <div className="absolute top-8 right-8 text-white/0 group-hover:text-lime transition-colors duration-300">
@@ -171,7 +169,7 @@ export default function PortfolioClient({
                             src={img}
                             alt={`${project.title} - ${i + 2}`}
                             fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                            className="object-cover transition-all duration-1000 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-700" />
                         </motion.div>
@@ -209,7 +207,7 @@ export default function PortfolioClient({
                               src={img}
                               alt={`${project.title} - ${i + 4}`}
                               fill
-                              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                              className="object-cover transition-all duration-700"
                             />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                           </motion.div>

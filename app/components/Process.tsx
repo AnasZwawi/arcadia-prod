@@ -9,27 +9,27 @@ const steps = [
     title: "Concept",
     desc: "We deconstruct the brief to find the core narrative.",
     image:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80",
   },
   {
     num: "02",
     title: "Capture",
     desc: "High-fidelity production with an agile, skeleton crew.",
     image:
-      "https://images.unsplash.com/photo-1598899134739-9609cdefdb20?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1540655037529-dec987208707?auto=format&fit=crop&w=600&q=80",
   },
   {
     num: "03",
     title: "Craft",
     desc: "Post-production that shapes the final emotional impact.",
     image:
-      "https://images.unsplash.com/photo-1478720568477-152d9b164e63?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80",
   },
 ];
 
 export function Process() {
   return (
-    <section className="py-32 bg-dark-bg text-white">
+    <section className="py-32 bg-dark-bg text-white -scroll-mt-8" id="process">
       <div className="max-w-[1920px] mx-auto px-6 sm:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12 border-b border-white/20 pb-12">
           <motion.div
