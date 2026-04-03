@@ -147,7 +147,6 @@ export default function PortfolioClient({
                         fill
                         className="object-cover transition-all duration-1000 ease-in-out group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700" />
                       <div className="absolute top-8 right-8 text-white/0 group-hover:text-lime transition-colors duration-300">
                         <ArrowUpRight size={32} />
                       </div>
@@ -171,7 +170,6 @@ export default function PortfolioClient({
                             fill
                             className="object-cover transition-all duration-1000 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-700" />
                         </motion.div>
                       ))}
                       {project.images.length === 1 && (
@@ -209,7 +207,6 @@ export default function PortfolioClient({
                               fill
                               className="object-cover transition-all duration-700"
                             />
-                            <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                           </motion.div>
                         ))}
                       </div>

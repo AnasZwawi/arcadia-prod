@@ -42,13 +42,13 @@ export function Clients({ logos }: { logos: string[] }) {
           {[...row1, ...row1, ...row1].map((logo, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-[280px] h-[140px] border border-white/10 bg-white/5 relative overflow-hidden group"
+              className="flex-shrink-0 w-[160px] h-[160px] border border-white/10 bg-white/5 relative overflow-hidden group"
             >
               <Image
                 src={logo}
                 alt={`Client ${idx + 1}`}
                 fill
-                className="object-cover grayscale  opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="object-cover"
               />
             </div>
           ))}
@@ -72,13 +72,13 @@ export function Clients({ logos }: { logos: string[] }) {
           {[...row2, ...row2, ...row2].map((logo, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-[280px] h-[140px] border border-white/10 bg-white/5 relative overflow-hidden group"
+              className="flex-shrink-0 w-[160px] h-[160px] border border-white/10 bg-white/5 relative overflow-hidden group"
             >
               <Image
                 src={logo}
                 alt={`Client ${idx + 1}`}
                 fill
-                className="object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="object-cover "
               />
             </div>
           ))}
