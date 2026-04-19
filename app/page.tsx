@@ -25,7 +25,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <Process />
-      <FeaturedProject />
+      
       <Services />
       <Clients logos={logos} />
       <Portfolio items={featuredProjects} />

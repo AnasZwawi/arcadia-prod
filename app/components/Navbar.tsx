@@ -83,7 +83,7 @@ export function Navbar() {
                 WORK
               </Link>
               <Link
-                href="#"
+                href="/#process"
                 className="hover:text-lime text-3xl font-bold tracking-tighter uppercase"
                 onClick={() => setIsOpen(false)}
               >

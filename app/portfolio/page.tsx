@@ -40,7 +40,7 @@ export default function PortfolioPage() {
               Let&apos;s create something extraordinary together
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block bg-black text-lime font-bold uppercase tracking-widest text-sm px-8 py-4 hover:bg-white hover:text-black transition-colors"
             >
               Start a Conversation

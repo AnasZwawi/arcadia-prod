@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { motion } from "framer-motion";
@@ -118,7 +119,7 @@ export default function ServicesPage() {
               Let's discuss how we can bring your vision to life
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block bg-lime text-black font-bold uppercase tracking-widest text-sm px-8 py-4 hover:bg-white transition-colors"
             >
               Get In Touch

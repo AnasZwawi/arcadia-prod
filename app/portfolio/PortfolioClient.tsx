@@ -111,7 +111,7 @@ export default function PortfolioClient({
                       <span className="text-lime font-mono uppercase tracking-[0.2em] text-xs block mb-4">
                         {project.category}
                       </span>
-                      <h2 className="text-6xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.8]">
+                      <h2 className="text-[42px] md:text-8xl font-bold uppercase tracking-tighter leading-[0.8]">
                         {project.title}
                       </h2>
                     </div>
