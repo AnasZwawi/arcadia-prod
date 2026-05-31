@@ -11,7 +11,7 @@ const clash = localFont({
 
 export const metadata: Metadata = {
   title: "Arcadia Prod",
-  description: "Minimalist Video & Photo Production",
+  description: "Video & Photo Production Company.",
 };
 
 export default function RootLayout({
