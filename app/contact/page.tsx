@@ -207,10 +207,10 @@ export default function ContactUs() {
                       Phone
                     </p>
                     <a
-                      href="tel:+21624500674"
+                      href="tel:+21692301031"
                       className="text-white hover:text-lime transition-colors"
                     >
-                      +216 24 500 674
+                      +216 92 301 031
                     </a>
                   </div>
                 </div>
